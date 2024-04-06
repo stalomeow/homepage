@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { IconDefinition } from '@fortawesome/fontawesome-common-types'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
 defineProps<{
   links: {
     url: string
     title: string
-    icon: IconDefinition
+    icon: string
   }[]
 }>()
-
 </script>
 
 <template>
@@ -23,7 +19,10 @@ defineProps<{
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon class="icon" :icon="link.icon" />
+      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
+      <ClientOnly>
+        <font-awesome-icon class="icon" :icon="link.icon" />
+      </ClientOnly>
     </a>
   </div>
 </template>

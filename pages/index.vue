@@ -1,36 +1,11 @@
 <script setup lang="ts">
-import { faEnvelope, faBlog, faMugSaucer } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faBilibili, faTelegram } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import Buttons from "../../components/Buttons.vue";
+import { useHead } from "unhead"
+import Buttons from "../components/Buttons.vue";
+import { links } from "../assets/data.json"
 
-const links = [
-  {
-    url: 'https://github.com/stalomeow',
-    title: 'GitHub',
-    icon: faGithub,
-  },
-  {
-    url: 'https://space.bilibili.com/456366858',
-    title: 'Bilibili',
-    icon: faBilibili,
-  },
-  {
-    url: 'mailto:stalowork@163.com',
-    title: 'E-Mail',
-    icon: faEnvelope
-  },
-  {
-    url: 'https://t.me/StaloMeow',
-    title: 'Telegram',
-    icon: faTelegram,
-  },
-  {
-    url: 'https://note.stalomeow.com/blog',
-    title: 'Blog',
-    icon: faBlog,
-  },
-]
+useHead({
+  title: 'Home | stalomeow'
+})
 </script>
 
 <template>
@@ -44,7 +19,10 @@ const links = [
   <Buttons :links="links" />
 
   <a class="sponsor-button" href="/sponsor">
-    <FontAwesomeIcon class="icon" :icon="faMugSaucer" />
+    <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
+    <ClientOnly>
+      <font-awesome-icon class="icon" icon="fa-solid fa-mug-saucer" />
+    </ClientOnly>
     <p>Buy Me a Coffee</p>
   </a>
 </template>
@@ -64,6 +42,7 @@ const links = [
 }
 
 .name {
+  color: rgba(255, 255, 255, 0.87);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0.2rem;

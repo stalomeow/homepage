@@ -1,3 +1,8 @@
+<template>
+  <nuxt-page />
+</template>
+
+<style>
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -56,7 +61,7 @@ button:focus-visible {
   padding: 2em;
 }
 
-#app {
+#__nuxt {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,3 +81,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+</style>

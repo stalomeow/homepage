@@ -1,0 +1,43 @@
+{
+  "links": [
+    {
+      "url": "https://github.com/stalomeow",
+      "title": "GitHub",
+      "icon": "fa-brands fa-github"
+    },
+    {
+      "url": "https://space.bilibili.com/456366858",
+      "title": "Bilibili",
+      "icon": "fa-brands fa-bilibili"
+    },
+    {
+      "url": "mailto:stalowork@163.com",
+      "title": "E-Mail",
+      "icon": "fa-solid fa-envelope"
+    },
+    {
+      "url": "https://t.me/StaloMeow",
+      "title": "Telegram",
+      "icon": "fa-brands fa-telegram"
+    },
+    {
+      "url": "https://note.stalomeow.com/blog",
+      "title": "Blog",
+      "icon": "fa-solid fa-blog"
+    }
+  ],
+  "sponsors": [
+    {
+      "name": "ANL",
+      "money": "¥400.00",
+      "time": "2023-09-01",
+      "msg": ""
+    },
+    {
+      "name": "阿海",
+      "money": "¥1.00",
+      "time": "2022-05-08",
+      "msg": "高考加油！"
+    }
+  ]
+}
