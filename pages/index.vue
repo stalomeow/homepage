@@ -7,14 +7,13 @@ useHead({ title: `Home | ${profile.name}` });
 
 const qrPanel = reactive({
   show: false,
-  activeCodeUrl: "",
-  codes: profile.sponsor.pays.map(config => Object.assign({}, config, { active: false })),
+  activePayUrl: "",
+  pays: profile.sponsor.pays.map(config => Object.assign({}, config, { active: false })),
 });
 
 const activateQrCode = (index: number) => {
-  qrPanel.activeCodeUrl = qrPanel.codes[index].url;
-  qrPanel.codes.forEach(item => item.active = false);
-  qrPanel.codes[index].active = true;
+  qrPanel.activePayUrl = qrPanel.pays[index].url;
+  qrPanel.pays.forEach((item, i) => item.active = (i === index));
 };
 
 activateQrCode(0);
@@ -43,8 +42,8 @@ activateQrCode(0);
   <Transition name="qr-panel">
     <div v-if="qrPanel.show" class="qr-panel" @click.self="qrPanel.show=false">
       <p class="qr-thanks">{{ profile.sponsor.thanks }}</p>
-      <div class="qr-code" :style="{ backgroundImage: `url(${qrPanel.activeCodeUrl})`}"></div>
-      <ButtonGroup :links="qrPanel.codes" :on-click="activateQrCode" />
+      <vue-qrcode class="qr-code" tag="svg" :value="qrPanel.activePayUrl" />
+      <ButtonGroup :links="qrPanel.pays" :on-click="activateQrCode" />
       <a class="sponsor-list-link" href="/sponsors">Sponsor List</a>
     </div>
   </Transition>

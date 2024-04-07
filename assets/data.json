@@ -36,12 +36,12 @@
       "thanks": "Thanks for your support!",
       "pays": [
         {
-          "url": "/img/sponsor-wechat.png",
+          "url": "wxp://f2f0gtIGJYCZNvXuEOe77OxnC8eSYXrA3qya_SqPzQ3LHgQ",
           "title": "WeChat",
           "icon": "fa-brands fa-weixin"
         },
         {
-          "url": "/img/sponsor-alipay.png",
+          "url": "https://qr.alipay.com/fkx11955ixftzijjqytpe78",
           "title": "Alipay",
           "icon": "fa-brands fa-alipay"
         }
