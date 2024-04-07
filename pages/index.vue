@@ -17,10 +17,10 @@ const activateQrCode = (index: number) => {
   qrPanel.pays.forEach((item, i) => item.active = (i === index));
 };
 
-onMounted(() => {
-  activateQrCode(0);
+activateQrCode(0);
 
-  // 直接打开二维码支付面板
+// 直接打开二维码支付面板
+watchPostEffect(() => {
   if (route.hash === "#coffee") {
     qrPanel.show = true;
   }
