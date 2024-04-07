@@ -5,6 +5,7 @@ import { profile } from "../assets/data.json";
 
 useHead({ title: `Home | ${profile.name}` });
 
+const route = useRoute();
 const qrPanel = reactive({
   show: false,
   activePayUrl: "",
@@ -16,7 +17,14 @@ const activateQrCode = (index: number) => {
   qrPanel.pays.forEach((item, i) => item.active = (i === index));
 };
 
-activateQrCode(0);
+onMounted(() => {
+  activateQrCode(0);
+
+  // 直接打开二维码支付面板
+  if (route.hash === "#coffee") {
+    qrPanel.show = true;
+  }
+});
 </script>
 
 <template>
@@ -31,10 +39,7 @@ activateQrCode(0);
     <ButtonGroup :links="profile.links" />
 
     <a class="sponsor-button" @click="qrPanel.show=true">
-      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
-      <ClientOnly>
-        <font-awesome-icon class="icon" :icon="profile.sponsor.icon" />
-      </ClientOnly>
+      <font-awesome-icon class="icon" :icon="profile.sponsor.icon" />
       <p>{{ profile.sponsor.prompt }}</p>
     </a>
   </div>

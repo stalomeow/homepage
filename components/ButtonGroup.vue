@@ -24,10 +24,7 @@ defineProps<{
       :title="link.title"
       :class="['button', (link.active === true) && 'active']"
     >
-      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
-      <ClientOnly>
-        <font-awesome-icon class="icon" :icon="link.icon" />
-      </ClientOnly>
+      <font-awesome-icon class="icon" :icon="link.icon" />
     </a>
   </div>
 </template>
