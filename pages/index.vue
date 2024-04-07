@@ -101,6 +101,7 @@ activateQrCode(0);
   font-size: 0.8rem;
   font-weight: bold;
   transition: transform 0.2s;
+  user-select: none;
 }
 
 .sponsor-button .icon {
@@ -157,9 +158,6 @@ activateQrCode(0);
 .qr-code {
   width: 15rem;
   height: 15rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   border-radius: 0.5rem;
 }
 
@@ -171,6 +169,7 @@ activateQrCode(0);
   margin: 1rem;
   color: var(--fg-color-secondary);
   transition: transform 0.2s ease-in-out;
+  user-select: none;
 }
 
 .sponsor-list-link:hover {
