@@ -1,15 +1,20 @@
 <script setup lang="ts">
-type ButtonLink = {
-  url: string;
-  title: string;
-  icon: string;
-  active?: boolean;
-};
+withDefaults(defineProps<{
+  buttons: {
+    title: string;
+    icon: string;
+    href?: string;
+  }[];
+  toggleMode?: boolean;
+}>(), {
+  toggleMode: false
+});
 
-defineProps<{
-  links: ButtonLink[];
-  onClick?: (index: number) => void;
-}>();
+const activeIndex = ref(0);
+
+defineExpose({
+  activeIndex
+});
 </script>
 
 <template>
@@ -18,16 +23,17 @@ defineProps<{
       target="_blank"
       rel="noopener noreferrer"
 
-      v-for="(link, index) in links" :key="link.url"
-      v-bind="onClick ? {} : { href: link.url }"
-      @click="onClick?.(index)"
-      :title="link.title"
-      :class="['button', (link.active === true) && 'active']"
+      v-for="(btn, i) in buttons"
+      :key="btn.title"
+      :href="btn.href"
+      :title="btn.title"
+      :class="['button', (toggleMode && i === activeIndex) && 'active']"
+      @click="activeIndex = i"
     >
       <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
       <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
       <ClientOnly>
-        <font-awesome-icon class="icon" :icon="link.icon" />
+        <font-awesome-icon class="icon" :icon="btn.icon" />
       </ClientOnly>
     </a>
   </div>

@@ -1,28 +1,23 @@
 <script setup lang="ts">
 import { useHead } from "unhead";
 import ButtonGroup from "../components/ButtonGroup.vue";
-import { profile } from "../assets/data.json";
+
+const { profile } = useAppConfig();
+const route = useRoute();
 
 useHead({ title: `Home | ${profile.name}` });
 
-const route = useRoute();
-const qrPanel = reactive({
-  show: false,
-  activePayUrl: "",
-  pays: profile.sponsor.pays.map(config => Object.assign({}, config, { active: false })),
+const qrToggle = ref<InstanceType<typeof ButtonGroup> | null>(null);
+const showQrPanel = ref(false);
+const qrCodeData = computed(() => {
+  const index = qrToggle.value?.activeIndex || 0;
+  return profile.sponsor.pays[index].qrCodeData;
 });
-
-const activateQrCode = (index: number) => {
-  qrPanel.activePayUrl = qrPanel.pays[index].url;
-  qrPanel.pays.forEach((item, i) => item.active = (i === index));
-};
-
-activateQrCode(0);
 
 // 直接打开二维码支付面板
 watchPostEffect(() => {
   if (route.hash === "#coffee") {
-    qrPanel.show = true;
+    showQrPanel.value = true;
   }
 });
 </script>
@@ -36,9 +31,9 @@ watchPostEffect(() => {
       <span class="user-id">@{{ profile.userId }}</span>
     </div>
 
-    <ButtonGroup :links="profile.links" />
+    <ButtonGroup :buttons="profile.links" />
 
-    <a class="sponsor-button" @click="qrPanel.show=true">
+    <a class="sponsor-button" @click="showQrPanel=true">
       <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
       <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
       <ClientOnly>
@@ -49,10 +44,10 @@ watchPostEffect(() => {
   </div>
 
   <Transition name="qr-panel">
-    <div v-if="qrPanel.show" class="qr-panel" @click.self="qrPanel.show=false">
+    <div v-if="showQrPanel" class="qr-panel" @click.self="showQrPanel=false">
       <p class="qr-thanks">{{ profile.sponsor.thanks }}</p>
-      <vue-qrcode class="qr-code" tag="svg" :value="qrPanel.activePayUrl" />
-      <ButtonGroup :links="qrPanel.pays" :on-click="activateQrCode" />
+      <vue-qrcode class="qr-code" tag="svg" :value="qrCodeData" />
+      <ButtonGroup ref="qrToggle" :buttons="profile.sponsor.pays" :toggle-mode="true" />
       <a class="sponsor-list-link" href="/sponsors">Sponsor List</a>
     </div>
   </Transition>

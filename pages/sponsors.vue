@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useHead } from "unhead"
-import { profile, sponsors } from "../assets/data.json"
+
+const { profile, sponsors } = useAppConfig();
 
 useHead({ title: `Sponsors | ${profile.name}` });
 </script>
