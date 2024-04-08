@@ -24,7 +24,11 @@ defineProps<{
       :title="link.title"
       :class="['button', (link.active === true) && 'active']"
     >
-      <font-awesome-icon class="icon" :icon="link.icon" />
+      <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
+      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
+      <ClientOnly>
+        <font-awesome-icon class="icon" :icon="link.icon" />
+      </ClientOnly>
     </a>
   </div>
 </template>

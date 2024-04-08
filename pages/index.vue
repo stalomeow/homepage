@@ -39,7 +39,11 @@ watchPostEffect(() => {
     <ButtonGroup :links="profile.links" />
 
     <a class="sponsor-button" @click="qrPanel.show=true">
-      <font-awesome-icon class="icon" :icon="profile.sponsor.icon" />
+      <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
+      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
+      <ClientOnly>
+        <font-awesome-icon class="icon" :icon="profile.sponsor.icon" />
+      </ClientOnly>
       <p>{{ profile.sponsor.prompt }}</p>
     </a>
   </div>
@@ -66,6 +70,7 @@ watchPostEffect(() => {
 .avatar {
   border-radius: 9999px;
   outline: 25rem solid var(--bg-color-secondary);
+  width: 12rem;
   height: 12rem;
   vertical-align: middle;
   transition: outline-color 0.2s ease-in-out;
