@@ -2,16 +2,16 @@
 import { useHead } from "unhead";
 import ButtonGroup from "../components/ButtonGroup.vue";
 
-const { profile } = useAppConfig();
+const appConfig = useAppConfig();
 const route = useRoute();
 
-useHead({ title: `Home | ${profile.name}` });
+useHead({ title: `Home | ${appConfig.profile.name}` });
 
 const qrToggle = ref<InstanceType<typeof ButtonGroup> | null>(null);
 const showQrPanel = ref(false);
 const qrCodeData = computed(() => {
   const index = qrToggle.value?.activeIndex || 0;
-  return profile.sponsor.pays[index].qrCodeData;
+  return appConfig.profile.sponsor.pays[index].qrCodeData;
 });
 
 // 直接打开二维码支付面板
@@ -24,30 +24,30 @@ watchPostEffect(() => {
 
 <template>
   <div class="home">
-    <img class="avatar" :src="profile.avatar" :alt="`${profile.name} Avatar`" />
+    <img class="avatar" :src="appConfig.profile.avatar" :alt="`${appConfig.profile.name} Avatar`" />
 
     <div class="info">
-      <span class="name">{{ profile.name }}</span>
-      <span class="user-id">@{{ profile.userId }}</span>
+      <span class="name">{{ appConfig.profile.name }}</span>
+      <span class="user-id">@{{ appConfig.profile.userId }}</span>
     </div>
 
-    <ButtonGroup :buttons="profile.links" />
+    <ButtonGroup :buttons="appConfig.profile.links" />
 
     <a class="sponsor-button" @click="showQrPanel=true">
       <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
       <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
       <ClientOnly>
-        <font-awesome-icon class="icon" :icon="profile.sponsor.icon" />
+        <font-awesome-icon class="icon" :icon="appConfig.profile.sponsor.icon" />
       </ClientOnly>
-      <p>{{ profile.sponsor.prompt }}</p>
+      <p>{{ appConfig.profile.sponsor.prompt }}</p>
     </a>
   </div>
 
   <Transition name="qr-panel">
     <div v-if="showQrPanel" class="qr-panel" @click.self="showQrPanel=false">
-      <p class="qr-thanks">{{ profile.sponsor.thanks }}</p>
+      <p class="qr-thanks">{{ appConfig.profile.sponsor.thanks }}</p>
       <vue-qrcode class="qr-code" tag="svg" :value="qrCodeData" />
-      <ButtonGroup ref="qrToggle" :buttons="profile.sponsor.pays" :toggle-mode="true" />
+      <ButtonGroup ref="qrToggle" :buttons="appConfig.profile.sponsor.pays" :toggle-mode="true" />
       <a class="sponsor-list-link" href="/sponsors">Sponsor List</a>
     </div>
   </Transition>
@@ -113,22 +113,12 @@ watchPostEffect(() => {
   width: 3rem;
   height: 3rem;
   vertical-align: middle;
+  transition: transform 0.2s;
 }
 
-.sponsor-button:hover p {
-  transform: scale(1.1);
-}
-
+.sponsor-button:hover p,
 .sponsor-button:hover .icon {
-  animation: tilt-shaking 0.2s 2;
-}
-
-@keyframes tilt-shaking {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(0eg); }
-  75% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  transform: scale(1.1);
 }
 
 .qr-panel-enter-active,

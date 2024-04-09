@@ -2,7 +2,7 @@
 withDefaults(defineProps<{
   buttons: {
     title: string;
-    icon: string;
+    icon: string[];
     href?: string;
   }[];
   toggleMode?: boolean;

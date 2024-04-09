@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useHead } from "unhead"
 
-const { profile, sponsors } = useAppConfig();
+const appConfig = useAppConfig();
 
-useHead({ title: `Sponsors | ${profile.name}` });
+useHead({ title: `Sponsors | ${appConfig.profile.name}` });
 </script>
 
 <template>
@@ -12,7 +12,7 @@ useHead({ title: `Sponsors | ${profile.name}` });
 
     <div class="timeline">
       <div
-        v-for="s in sponsors"
+        v-for="s in appConfig.sponsors"
         :key="`${s.time}-${s.name}-${s.money}-${s.msg}`"
         class="timeline-item"
       >
