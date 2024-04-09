@@ -30,11 +30,7 @@ defineExpose({
       :class="['button', (toggleMode && i === activeIndex) && 'active']"
       @click="activeIndex = i"
     >
-      <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
-      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
-      <ClientOnly>
-        <font-awesome-icon class="icon" :icon="btn.icon" />
-      </ClientOnly>
+      <font-awesome-icon class="icon" :icon="btn.icon" />
     </a>
   </div>
 </template>

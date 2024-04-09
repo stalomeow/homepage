@@ -33,11 +33,7 @@ watchPostEffect(() => {
     <ButtonGroup :buttons="appConfig.profile.links" />
 
     <a class="sponsor-button" @click="showQrPanel=true">
-      <!-- TODO https://nuxt.com/docs/getting-started/deployment#static-hosting -->
-      <!-- TODO https://github.com/FortAwesome/vue-fontawesome/issues/394 -->
-      <ClientOnly>
-        <font-awesome-icon class="icon" :icon="appConfig.profile.sponsor.icon" />
-      </ClientOnly>
+      <font-awesome-icon class="icon" :icon="appConfig.profile.sponsor.icon" />
       <p>{{ appConfig.profile.sponsor.prompt }}</p>
     </a>
   </div>
