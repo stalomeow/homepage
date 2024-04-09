@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useHead } from "unhead";
 import ButtonGroup from "../components/ButtonGroup.vue";
 
 const appConfig = useAppConfig();

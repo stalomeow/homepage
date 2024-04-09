@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useHead } from "unhead"
-
 const appConfig = useAppConfig();
 
 useHead({ title: `Sponsors | ${appConfig.profile.name}` });
