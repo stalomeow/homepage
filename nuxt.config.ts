@@ -12,5 +12,8 @@ export default defineNuxtConfig({
       '@fortawesome/free-regular-svg-icons',
       '@fortawesome/free-solid-svg-icons',
     ]
+  },
+  routeRules: {
+    '/**': { prerender: true }
   }
 })
