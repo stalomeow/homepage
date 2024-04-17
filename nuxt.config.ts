@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       '@fortawesome/free-solid-svg-icons',
     ]
   },
-  routeRules: {
-    '**': { prerender: true }
+  nitro: {
+    static: true
   }
 })
