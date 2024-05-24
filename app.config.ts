@@ -50,6 +50,12 @@ export default defineAppConfig({
   },
   sponsors: [
     {
+      name: '廉价动画师',
+      money: '¥45.00',
+      time: '2024-05-24',
+      msg: '谢谢你的 shader 分享，受益良多'
+    },
+    {
       name: 'ANL',
       money: '¥400.00',
       time: '2023-09-01',
