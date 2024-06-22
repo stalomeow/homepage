@@ -6,7 +6,7 @@ useHead({ title: `Sponsors | ${appConfig.profile.name}` });
 
 <template>
   <div class="sponsor-list">
-    <p class="title">Sponsors</p>
+    <p class="title">{{ appConfig.sponsorsTitle }}</p>
 
     <div class="timeline">
       <div
