@@ -51,6 +51,12 @@ export default defineAppConfig({
   sponsorsTitle: 'Sponsors (UTC+8)',
   sponsors: [
     {
+      name: '*不',
+      money: '¥3.00',
+      time: '2024-07-21',
+      msg: '快乐水'
+    },
+    {
       name: 'haochanchan',
       money: '¥100.00',
       time: '2024-06-22',
