@@ -51,34 +51,67 @@ export default defineAppConfig({
   sponsorsTitle: 'Sponsors (UTC+8)',
   sponsors: [
     {
+      name: 'Aoba青葉',
+      money: '5.00 CNY',
+      time: '2024-09-02',
+      msg: '牛比',
+      src: 'bilibili charge'
+    },
+    {
       name: '*不',
-      money: '¥3.00',
+      money: '3.00 CNY',
       time: '2024-07-21',
-      msg: '快乐水'
+      msg: '快乐水',
+      src: ''
     },
     {
       name: 'haochanchan',
-      money: '¥100.00',
+      money: '100.00 CNY',
       time: '2024-06-22',
-      msg: '谢谢啦'
+      msg: '谢谢啦',
+      src: ''
     },
     {
       name: '廉价动画师',
-      money: '¥45.00',
-      time: '2024-05-24',
-      msg: '谢谢你的 shader 分享，受益良多'
+      money: '45.00 CNY',
+      time: '2024-05-22',
+      msg: '谢谢你的 shader 分享，受益良多',
+      src: 'bilibili charge'
+    },
+    {
+      name: '该帐号已恢复使用',
+      money: '6.00 CNY',
+      time: '2023-10-13',
+      msg: '',
+      src: 'bilibili charge'
+    },
+    {
+      name: '该帐号已恢复使用',
+      money: '6.00 CNY',
+      time: '2023-10-12',
+      msg: '',
+      src: 'bilibili charge'
     },
     {
       name: 'ANL',
-      money: '¥400.00',
+      money: '400.00 CNY',
       time: '2023-09-01',
-      msg: ''
+      msg: '',
+      src: ''
+    },
+    {
+      name: 'Senchyi',
+      money: '88.00 CNY',
+      time: '2023-08-30',
+      msg: '',
+      src: 'bilibili charge'
     },
     {
       name: '阿海',
-      money: '¥1.00',
+      money: '1.00 CNY',
       time: '2022-05-08',
-      msg: '高考加油！'
+      msg: '高考加油！',
+      src: ''
     }
   ]
 })

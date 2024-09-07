@@ -11,14 +11,18 @@ useHead({ title: `Sponsors | ${appConfig.profile.name}` });
     <div class="timeline">
       <div
         v-for="s in appConfig.sponsors"
-        :key="`${s.time}-${s.name}-${s.money}-${s.msg}`"
+        :key="`${s.time}-${s.name}-${s.money}-${s.msg}-${s.src}`"
         class="timeline-item"
       >
         <div class="timeline-blank"></div>
         <div class="timeline-text">
           <span>
-            <p class="timeline-time">{{ s.time }} · {{ s.name }} · {{ s.money }}</p>
-            <p v-if="s.msg">{{ s.msg }}</p>
+            <p class="timeline-time">{{ s.time }} · {{ s.name }}</p>
+            <p class="timeline-line" v-if="s.msg">「{{ s.msg }}」</p>
+            <p class="timeline-line timeline-money">
+              +{{ s.money }}
+              <span class="timeline-src" v-if="s.src">· {{ s.src }}</span>
+            </p>
           </span>
         </div>
       </div>
@@ -90,6 +94,11 @@ useHead({ title: `Sponsors | ${appConfig.profile.name}` });
   text-align: right;
 }
 
+.timeline-text .timeline-line {
+  margin: 0.4rem 0;
+  font-size: 0.8rem;
+}
+
 .timeline-text .timeline-time {
   font-weight: bold;
   display: inline-block;
@@ -108,6 +117,14 @@ useHead({ title: `Sponsors | ${appConfig.profile.name}` });
   border-radius: 50%;
   box-shadow: 0 0 0 5px var(--bg-color-primary);
   transform: translateY(50%);
+}
+
+.timeline-text .timeline-money {
+  opacity: 0.6;
+}
+
+.timeline-text .timeline-src {
+  display: inline;
 }
 
 .timeline-item:nth-child(even) .timeline-text .timeline-time::before {
