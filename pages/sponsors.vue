@@ -117,6 +117,7 @@ useHead({ title: `Sponsors | ${appConfig.profile.name}` });
   border-radius: 50%;
   box-shadow: 0 0 0 5px var(--bg-color-primary);
   transform: translateY(50%);
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 .timeline-text .timeline-money {

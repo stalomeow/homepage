@@ -28,14 +28,10 @@
 
   color: var(--fg-color-primary);
   background-color: var(--bg-color-primary);
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-svg path {
-  transition: fill 0.2s ease-in-out;
 }
 </style>

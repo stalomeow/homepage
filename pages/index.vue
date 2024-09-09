@@ -100,7 +100,7 @@ watchPostEffect(() => {
   margin: 0.5rem;
   font-size: 0.8rem;
   font-weight: bold;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
   user-select: none;
 }
 
@@ -108,7 +108,7 @@ watchPostEffect(() => {
   width: 3rem;
   height: 3rem;
   vertical-align: middle;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .sponsor-button:hover p,
