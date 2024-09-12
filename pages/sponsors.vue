@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
-
-useHead({ title: `Sponsors | ${appConfig.profile.name}` });
+useHead(appConfig.heads.sponsors);
 </script>
 
 <template>

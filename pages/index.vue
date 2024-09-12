@@ -3,8 +3,7 @@ import ButtonGroup from "../components/ButtonGroup.vue";
 
 const appConfig = useAppConfig();
 const route = useRoute();
-
-useHead({ title: `Home | ${appConfig.profile.name}` });
+useHead(appConfig.heads.index);
 
 const qrToggle = ref<InstanceType<typeof ButtonGroup> | null>(null);
 const showQrPanel = ref(false);

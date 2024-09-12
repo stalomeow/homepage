@@ -48,6 +48,26 @@ export default defineAppConfig({
       ]
     }
   },
+  heads: {
+    index: {
+      title: 'Home | stalomeow',
+      meta: [
+        {
+          name: 'description',
+          content: 'The home page of stalomeow.',
+        },
+      ]
+    },
+    sponsors: {
+      title: 'Sponsors | stalomeow',
+      meta: [
+        {
+          name: 'description',
+          content: 'The sponsors of stalomeow.',
+        },
+      ]
+    },
+  },
   sponsorsTitle: 'Sponsors (UTC+8)',
   sponsors: [
     {
