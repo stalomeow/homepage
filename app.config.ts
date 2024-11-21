@@ -17,7 +17,7 @@ export default defineAppConfig({
       {
         title: 'E-Mail',
         icon: ['fas', 'envelope'],
-        href: 'mailto:stalowork@163.com',
+        href: 'mailto:me@stalomeow.com',
       },
       {
         title: 'Telegram',
