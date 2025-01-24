@@ -22,7 +22,7 @@ export default defineAppConfig({
       {
         title: 'Telegram',
         icon: ['fab', 'telegram'],
-        href: 'https://t.me/StaloMeow',
+        href: 'https://t.me/stalomeow',
       },
       {
         title: 'Note',
