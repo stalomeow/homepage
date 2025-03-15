@@ -2,7 +2,7 @@ export default defineAppConfig({
   profile: {
     name: 'Stalo',
     userId: 'stalomeow',
-    avatar: '/img/avatar.jpg',
+    avatar: '/img/avatar.png',
     links: [
       {
         title: 'GitHub',
