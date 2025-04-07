@@ -25,8 +25,8 @@ export default defineAppConfig({
         href: 'https://t.me/stalomeow',
       },
       {
-        title: 'Note',
-        icon: ['fas', 'note-sticky'],
+        title: 'About & Note',
+        icon: ['fas', 'circle-info'],
         href: 'https://note.stalomeow.com',
       }
     ],
