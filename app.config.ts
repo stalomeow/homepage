@@ -71,6 +71,13 @@ export default defineAppConfig({
   sponsorsTitle: 'Sponsors (UTC+8)',
   sponsors: [
     {
+      name: '*烬',
+      money: '1.00 CNY',
+      time: '2025-05-04',
+      msg: '',
+      src: ''
+    },
+    {
       name: '*事',
       money: '11.45 CNY',
       time: '2025-02-17',
