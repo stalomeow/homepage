@@ -71,6 +71,13 @@ export default defineAppConfig({
   sponsorsTitle: 'Sponsors (UTC+8)',
   sponsors: [
     {
+      name: 'VIRTUALGUARD',
+      money: '15.00 CNY',
+      time: '2025-05-12',
+      msg: '',
+      src: ''
+    },
+    {
       name: '*烬',
       money: '1.00 CNY',
       time: '2025-05-04',
