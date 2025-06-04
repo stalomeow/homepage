@@ -5,6 +5,11 @@ export default defineAppConfig({
     avatar: '/img/avatar.png',
     links: [
       {
+        title: 'Note',
+        icon: ['fas', 'book'],
+        href: 'https://note.stalomeow.com',
+      },
+      {
         title: 'GitHub',
         icon: ['fab', 'github'],
         href: 'https://github.com/stalomeow',
@@ -25,7 +30,7 @@ export default defineAppConfig({
         href: 'https://t.me/stalomeow',
       },
       {
-        title: 'About & Note',
+        title: 'About',
         icon: ['fas', 'circle-info'],
         href: 'https://note.stalomeow.com',
       }
