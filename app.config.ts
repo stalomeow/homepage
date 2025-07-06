@@ -76,6 +76,13 @@ export default defineAppConfig({
   sponsorsTitle: 'Sponsors (UTC+8)',
   sponsors: [
     {
+      name: 'Ai狗核桃',
+      money: '25.00 CNY',
+      time: '2025-07-01',
+      msg: '感谢分享，请你喝咖啡',
+      src: ''
+    },
+    {
       name: 'VIRTUALGUARD',
       money: '15.00 CNY',
       time: '2025-05-12',
