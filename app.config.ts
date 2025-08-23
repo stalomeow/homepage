@@ -14,11 +14,11 @@ export default defineAppConfig({
         icon: ['fab', 'github'],
         href: 'https://github.com/stalomeow',
       },
-      {
-        title: 'Bilibili',
-        icon: ['fab', 'bilibili'],
-        href: 'https://space.bilibili.com/456366858',
-      },
+      // {
+      //   title: 'Bilibili',
+      //   icon: ['fab', 'bilibili'],
+      //   href: 'https://space.bilibili.com/456366858',
+      // },
       {
         title: 'E-Mail',
         icon: ['fas', 'envelope'],
