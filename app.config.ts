@@ -20,7 +20,7 @@ export default defineAppConfig({
       //   href: 'https://space.bilibili.com/456366858',
       // },
       {
-        title: 'E-Mail',
+        title: 'Email',
         icon: ['fas', 'envelope'],
         href: 'mailto:mail@stalomeow.com',
       },
