@@ -29,11 +29,11 @@ export default defineAppConfig({
       //   icon: ['fab', 'telegram'],
       //   href: 'https://t.me/stalomeow',
       // },
-      {
-        title: 'About',
-        icon: ['fas', 'circle-info'],
-        href: 'https://km.stalomeow.com',
-      }
+      // {
+      //   title: 'About',
+      //   icon: ['fas', 'circle-info'],
+      //   href: 'https://km.stalomeow.com',
+      // }
     ],
     sponsor: {
       icon: ['fas', 'mug-saucer'],
