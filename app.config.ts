@@ -24,11 +24,11 @@ export default defineAppConfig({
         icon: ['fas', 'envelope'],
         href: 'mailto:mail@stalomeow.com',
       },
-      {
-        title: 'Telegram',
-        icon: ['fab', 'telegram'],
-        href: 'https://t.me/stalomeow',
-      },
+      // {
+      //   title: 'Telegram',
+      //   icon: ['fab', 'telegram'],
+      //   href: 'https://t.me/stalomeow',
+      // },
       {
         title: 'About',
         icon: ['fas', 'circle-info'],
